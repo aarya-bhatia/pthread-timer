@@ -3,7 +3,7 @@
 
 void timer_init(Timer *this)
 {
-	memset(this,0,sizeof *this);
+	memset(this, 0, sizeof *this);
 	pthread_mutex_init(&this->m, NULL);
 	pthread_cond_init(&this->cv, NULL);
 }
@@ -35,19 +35,11 @@ void *timer_thread(void *args)
 
 	log_info("Timer started for %zu seconds", this->timeout.tv_sec);
 
-	struct timespec start, end;
-	clock_gettime(CLOCK_MONOTONIC, &start);
-
 	pthread_cond_timedwait(&this->cv, &this->m, &ts);
 
 	log_info("Timer expired");
 
-	clock_gettime(CLOCK_MONOTONIC, &end);
-	double duration = end.tv_sec - start.tv_sec + (end.tv_nsec - start.tv_nsec) * 1E-9;
-	log_debug("Duration: %f", duration);
-
-	if (this->alive)
-		this->alive = 0;
+	this->alive = 0;
 
 	pthread_cond_signal(&this->cv);
 
@@ -87,4 +79,22 @@ void timer_wait(Timer *this)
 	pthread_join(this->tid, NULL);
 
 	pthread_mutex_unlock(&this->m);
+}
+
+double get_duration_sec(void *(*fptr)(void *), void *args)
+{
+	assert(fptr);
+
+	struct timespec start, end;
+	clock_gettime(CLOCK_MONOTONIC, &start);
+
+	fptr(args);
+
+	clock_gettime(CLOCK_MONOTONIC, &end);
+
+	double duration = end.tv_sec - start.tv_sec + (end.tv_nsec - start.tv_nsec) * 1E-9;
+
+	log_debug("Duration: %f", duration);
+
+	return duration;
 }

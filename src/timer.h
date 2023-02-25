@@ -15,3 +15,5 @@ void *timer_thread(void *args);
 void timer_start(Timer *this);
 void timer_stop(Timer *this);
 void timer_wait(Timer *this);
+
+double get_duration_sec(void *(*fptr)(void *), void *args);

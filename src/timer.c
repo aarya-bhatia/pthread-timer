@@ -1,11 +1,8 @@
 #include "common.h"
 #include "timer.h"
-#include <log.h>
 
 void *timer_thread(void *args)
 {
-	pthread_detach(pthread_self());
-
 	Timer *this = (Timer *)args;
 
 	struct timespec ts;
@@ -49,6 +46,7 @@ void *timer_thread(void *args)
 void timer_start(Timer *this)
 {
 	pthread_create(&this->tid, NULL, timer_thread, this);
+	sleep(1);
 }
 
 void timer_stop(Timer *this)
@@ -61,6 +59,8 @@ void timer_stop(Timer *this)
 		pthread_cond_signal(&this->cv);
 	}
 
+	pthread_join(this->tid, NULL);
+
 	pthread_mutex_unlock(&this->m);
 }
 
@@ -68,12 +68,11 @@ void timer_wait(Timer *this)
 {
 	pthread_mutex_lock(&this->m);
 
-	while (this->alive)
-	{
-		pthread_cond_wait(&this->cv, &this->m);
-	}
+	pthread_cond_wait(&this->cv, &this->m);
 
 	pthread_cond_signal(&this->cv);
+
+	pthread_join(this->tid, NULL);
 
 	pthread_mutex_unlock(&this->m);
 }

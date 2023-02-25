@@ -3,4 +3,5 @@
 *.d
 *.exe
 tmp
-
+test
+obj

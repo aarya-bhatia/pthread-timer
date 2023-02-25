@@ -1,4 +1,6 @@
-COMPILERFLAGS = -std=c99 -g -Wall -Wextra -pedantic -O1
+COMPILERFLAGS = -std=c99 -g -Wall -Wextra -Wno-strict-prototypes -pedantic -O1
+INCLUDE=-I/usr/local/include
+LINKLIBS=-L/usr/local/lib -llog
 
 .PHONY: all clean
 
@@ -11,7 +13,7 @@ clean :
 	$(RM) obj/*.o test
 
 obj/%.o: src/%.c
-	$(CC) $(COMPILERFLAGS) -c -o $@ $<
+	$(CC) $(INCLUDE) $(COMPILERFLAGS) -c -o $@ $<
 	
 obj:
 	mkdir -p obj

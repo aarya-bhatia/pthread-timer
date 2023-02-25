@@ -19,16 +19,8 @@
 #include <sys/time.h>
 #include <time.h>
 
-#ifdef DEBUG
 #include <assert.h>
-#include "log.h"
-#else
-#define assert(...) (void)0
-#define log_info(...) (void)0
-#define log_debug(...) (void)0
-#define log_warn(...) (void)0
-#define log_error(...) (void)0
-#endif
+#include <log.h>
 
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 #define MAX(a, b) ((a) > (b) ? (a) : (b))

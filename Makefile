@@ -1,5 +1,5 @@
 COMPILERFLAGS = -std=c99 -g -Wall -Wextra -Wno-strict-prototypes -pedantic -O1
-INCLUDE=-I/usr/local/include
+INCLUDE=-Isrc -Isrc/include -I/usr/local/include
 LINKLIBS=-L/usr/local/lib -llog
 
 .PHONY: all clean

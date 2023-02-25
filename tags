@@ -1,0 +1,37 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+COMPILERFLAGS	Makefile	/^COMPILERFLAGS = -std=c99 -g -Wall -Wextra -Wno-strict-prototypes -pedantic -O1$/;"	m
+INCLUDE	Makefile	/^INCLUDE=-I\/usr\/local\/include$/;"	m
+LINKLIBS	Makefile	/^LINKLIBS=-L\/usr\/local\/lib -llog$/;"	m
+MAX	src/common.h	26;"	d
+MIN	src/common.h	25;"	d
+Timer	src/timer.h	/^typedef struct Timer$/;"	s
+Timer	src/timer.h	/^} Timer;$/;"	t	typeref:struct:Timer
+Timer::alive	src/timer.h	/^	bool alive;$/;"	m	struct:Timer	access:public
+Timer::cv	src/timer.h	/^	pthread_cond_t cv;$/;"	m	struct:Timer	access:public
+Timer::m	src/timer.h	/^	pthread_mutex_t m;$/;"	m	struct:Timer	access:public
+Timer::tid	src/timer.h	/^	pthread_t tid;$/;"	m	struct:Timer	access:public
+Timer::timeout	src/timer.h	/^	struct timespec timeout;$/;"	m	struct:Timer	typeref:struct:Timer::timespec	access:public
+_GNU_SOURCE	src/common.h	3;"	d
+alive	src/timer.h	/^	bool alive;$/;"	m	struct:Timer	access:public
+cv	src/timer.h	/^	pthread_cond_t cv;$/;"	m	struct:Timer	access:public
+m	src/timer.h	/^	pthread_mutex_t m;$/;"	m	struct:Timer	access:public
+main	src/test.c	/^int main()$/;"	f
+tid	src/timer.h	/^	pthread_t tid;$/;"	m	struct:Timer	access:public
+timeout	src/timer.h	/^	struct timespec timeout;$/;"	m	struct:Timer	typeref:struct:Timer::timespec	access:public
+timer_destroy	src/timer.c	/^void timer_destroy(Timer *this)$/;"	f	signature:(Timer *this)
+timer_destroy	src/timer.h	/^void timer_destroy(Timer *this);$/;"	p	signature:(Timer *this)
+timer_init	src/timer.c	/^void timer_init(Timer *this)$/;"	f	signature:(Timer *this)
+timer_init	src/timer.h	/^void timer_init(Timer *this);$/;"	p	signature:(Timer *this)
+timer_start	src/timer.c	/^void timer_start(Timer *this)$/;"	f	signature:(Timer *this)
+timer_start	src/timer.h	/^void timer_start(Timer *this);$/;"	p	signature:(Timer *this)
+timer_stop	src/timer.c	/^void timer_stop(Timer *this)$/;"	f	signature:(Timer *this)
+timer_stop	src/timer.h	/^void timer_stop(Timer *this);$/;"	p	signature:(Timer *this)
+timer_thread	src/timer.c	/^void *timer_thread(void *args)$/;"	f	signature:(void *args)
+timer_thread	src/timer.h	/^void *timer_thread(void *args);$/;"	p	signature:(void *args)
+timer_wait	src/timer.c	/^void timer_wait(Timer *this)$/;"	f	signature:(Timer *this)
+timer_wait	src/timer.h	/^void timer_wait(Timer *this);$/;"	p	signature:(Timer *this)

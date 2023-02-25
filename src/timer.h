@@ -9,6 +9,8 @@ typedef struct Timer
 	struct timespec timeout;
 } Timer;
 
+void timer_init(Timer *this);
+void timer_destroy(Timer *this);
 void *timer_thread(void *args);
 void timer_start(Timer *this);
 void timer_stop(Timer *this);

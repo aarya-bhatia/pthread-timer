@@ -1,0 +1,34 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+MAX	common.h	34;"	d
+MIN	common.h	33;"	d
+_GNU_SOURCE	common.h	3;"	d
+alive	timer.c	/^	bool alive;$/;"	m	struct:timer_t	file:	access:public
+assert	common.h	26;"	d
+cv	timer.c	/^	pthread_cond_t cv;$/;"	m	struct:timer_t	file:	access:public
+log_debug	common.h	28;"	d
+log_error	common.h	30;"	d
+log_info	common.h	27;"	d
+log_warn	common.h	29;"	d
+m	timer.c	/^	pthread_mutex_t m;$/;"	m	struct:timer_t	file:	access:public
+tid	timer.c	/^	pthread_t tid;$/;"	m	struct:timer_t	file:	access:public
+timeout	timer.c	/^	struct timeval timeout;$/;"	m	struct:timer_t	typeref:struct:timer_t::timeval	file:	access:public
+timer_start	timer.c	/^void timer_start(timer_t *this)$/;"	f	signature:(timer_t *this)
+timer_stop	timer.c	/^void timer_stop();$/;"	p	file:
+timer_t	timer.c	/^typedef struct timer_t$/;"	s	file:
+timer_t	timer.c	/^} timer_t;$/;"	t	typeref:struct:timer_t	file:
+timer_t::alive	timer.c	/^	bool alive;$/;"	m	struct:timer_t	file:	access:public
+timer_t::cv	timer.c	/^	pthread_cond_t cv;$/;"	m	struct:timer_t	file:	access:public
+timer_t::m	timer.c	/^	pthread_mutex_t m;$/;"	m	struct:timer_t	file:	access:public
+timer_t::tid	timer.c	/^	pthread_t tid;$/;"	m	struct:timer_t	file:	access:public
+timer_t::timeout	timer.c	/^	struct timeval timeout;$/;"	m	struct:timer_t	typeref:struct:timer_t::timeval	file:	access:public
+timer_wait	timer.c	/^void timer_wait();$/;"	p	file:
+timeval	timer.c	/^ struct timeval {$/;"	s	file:
+timeval::tv_sec	timer.c	/^		time_t      tv_sec;  \/* Seconds *\/$/;"	m	struct:timeval	file:	access:public
+timeval::tv_usec	timer.c	/^		suseconds_t tv_usec; \/* Microseconds *\/$/;"	m	struct:timeval	file:	access:public
+tv_sec	timer.c	/^		time_t      tv_sec;  \/* Seconds *\/$/;"	m	struct:timeval	file:	access:public
+tv_usec	timer.c	/^		suseconds_t tv_usec; \/* Microseconds *\/$/;"	m	struct:timeval	file:	access:public

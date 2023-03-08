@@ -1,6 +1,6 @@
 COMPILERFLAGS = -std=c99 -g -Wall -Wextra -Wno-strict-prototypes -pedantic -O1
-INCLUDE=-Isrc -Isrc/include -I/usr/local/include
-LINKLIBS=-L/usr/local/lib -llog
+INCLUDE=-Isrc -Isrc/include
+LINKLIBS=-Llib -llog
 
 .PHONY: all clean
 
